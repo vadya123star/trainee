@@ -1,10 +1,23 @@
-<script src="script.js"></script>
+const products = [];
 
-<body>
+const categories = [
+    "Electronics",
+    "Fashion",
+    "Sports",
+    "Gaming",
+    "Accessories"
+];
 
-<header>
-    <h1>Prime Cart</h1>
-</header>
+for (let i = 1; i <= 100; i++) {
 
-<script src="script.js"></script>
-</body>
+    products.push({
+        id: i,
+        name: `Premium Product ${i}`,
+        price: Math.floor(Math.random() * 10000) + 999,
+        category: categories[Math.floor(Math.random() * categories.length)],
+        image: `https://picsum.photos/300/300?random=${i}`,
+        description:
+        "Premium quality product with excellent features and luxury finishing. Smooth design and best performance."
+    });
+
+}
