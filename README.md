@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Prime Cart</h1>
+    <input type="text" id="searchBar" placeholder="Search products...">
+    <div class="cart">
+        🛒 Cart: <span id="cart-count">0</span>
+    </div>
+</header>
+
+<section class="products" id="products-container">
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
