@@ -1,47 +1,48 @@
-const productsContainer = document.getElementById("products-container");
-const searchBar = document.getElementById("searchBar");
-const cartCount = document.getElementById("cart-count");
+const productsGrid = document.getElementById("productsGrid");
+const searchInput = document.getElementById("searchInput");
 
-let cart = 0;
+function displayProducts(productList){
 
-const products = [];
+    productsGrid.innerHTML = "";
 
-for (let i = 1; i <= 100; i++) {
-    products.push({
-        name: `Product ${i}`,
-        price: Math.floor(Math.random() * 5000) + 100,
-        image: "https://via.placeholder.com/250"
-    });
-}
+    productList.forEach(product => {
 
-function displayProducts(items) {
-    productsContainer.innerHTML = "";
+        const card = document.createElement("div");
+        card.classList.add("product-card");
 
-    items.forEach(product => {
-        productsContainer.innerHTML += `
-            <div class="product-card">
-                <img src="${product.image}">
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <div class="product-info">
                 <h3>${product.name}</h3>
-                <p>₹${product.price}</p>
-                <button onclick="addToCart()">Add to Cart</button>
+                <p>${product.category}</p>
+                <p class="price">₹${product.price}</p>
             </div>
         `;
+
+        card.addEventListener("click", () => {
+
+            localStorage.setItem(
+                "selectedProduct",
+                JSON.stringify(product)
+            );
+
+            window.location.href = "product.html";
+        });
+
+        productsGrid.appendChild(card);
     });
 }
 
-function addToCart() {
-    cart++;
-    cartCount.innerText = cart;
-}
+displayProducts(products);
 
-searchBar.addEventListener("input", () => {
-    const searchValue = searchBar.value.toLowerCase();
+/* SEARCH */
+searchInput.addEventListener("input", () => {
 
-    const filtered = products.filter(product =>
-        product.name.toLowerCase().includes(searchValue)
+    const value = searchInput.value.toLowerCase();
+
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(value)
     );
 
-    displayProducts(filtered);
+    displayProducts(filteredProducts);
 });
-
-displayProducts(products);
