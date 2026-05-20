@@ -8,17 +8,56 @@
 </head>
 <body>
 
-<header>
-    <h1>Prime Cart</h1>
-    <input type="text" id="searchBar" placeholder="Search products...">
-    <div class="cart">
-        🛒 Cart: <span id="cart-count">0</span>
-    </div>
-</header>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <h1>Prime Cart</h1>
+        </div>
 
-<section class="products" id="products-container">
-</section>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search products...">
+        </div>
 
-<script src="script.js"></script>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart 🛒</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Premium Shopping Experience</h2>
+            <p>Electronics • Fashion • Sports • Accessories • More</p>
+        </div>
+    </section>
+
+    <!-- CATEGORY SECTION -->
+    <section class="categories">
+        <button>Electronics</button>
+        <button>Sports</button>
+        <button>Fashion</button>
+        <button>Accessories</button>
+        <button>Gaming</button>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products-section">
+        <h2>Featured Products</h2>
+
+        <div class="products-grid" id="productsGrid">
+
+        </div>
+    </section>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/918288090514" class="whatsapp-button">
+        WhatsApp Support
+    </a>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
